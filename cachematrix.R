@@ -1,23 +1,21 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Two functions to create special "matrix" that can cache its inverse, then
+## another to compute the inverse.  If the inverse was already calculated
+## then the second function should retrieve the inverse from the cache.
 
-## Write a short comment describing this function
+## makeCacheMatrix creates a special "matrix" object that can cache its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
-
-}
-makeVector <- function(x = numeric()) {
-        m <- NULL
+        inv <- NULL
         set <- function(y) {
                 x <<- y
-                m <<- NULL
+                inv <<- NULL
         }
         get <- function() x
         setmean <- function(mean) m <<- mean
         getmean <- function() m
-        list(set = set, get = get,
-             setmean = setmean,
-             getmean = getmean)
+        list(set = set, get = get)
+}
+
 
 ## Write a short comment describing this function
 
